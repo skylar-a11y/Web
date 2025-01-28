@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Elegan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        h1, h2 {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1f1c2c, #928DAB);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        /* Navigation */
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: gold;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f39c12;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        section {
+            width: 48%;
+            margin-bottom: 30px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-10px);
+        }
+
+        section h2 {
+            font-size: 2em;
+            color: #333;
+        }
+
+        section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        section ul li {
+            margin: 10px 0;
+        }
+
+        section ul li a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+
+        section ul li a:hover {
+            color: #f39c12;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: black;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Scroll to Top Button */
+        #scrollToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #f39c12;
+            color: gold;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        /* Button Tambah Blog */
+        #addBlogButton {
+            position: fixed;
+            bottom: 20px;
+            right: 100px;
+            background-color: #f39c12;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 30px;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        #addBlogButton:hover {
+            transform: scale(1.1);
+        }
+
+        /* Formulir Tambah Blog */
+        #addBlogForm {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: black;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 300px;
+            z-index: 1000;
+        }
+
+        #addBlogForm input, #addBlogForm textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #addBlogForm button {
+            background-color: #f39c12;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        #addBlogForm button:hover {
+            background-color: #e67e22;
+        }
+
+        /* Overlay untuk menutupi konten saat formulir terbuka */
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Blog Elegan</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="content">
+            <h2>Selamat datang di Blog Saya!</h2>
+            <p>Ini blog yang berisi berbagai informasi tentang proyek-proyek saya, dan banyak lagi!</p>
+        </section>
+
+        <section id="projects">
+            <h2>Proyek Terbaru</h2>
+            <ul>
+                <li><a href="#">Proyek 1: Website Portofolio</a></li>
+                <li><a href="#">Proyek 2: Aplikasi To-Do List</a></li>
+                <li><a href="#">Proyek 3: Sistem Pengelolaan Tugas</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Blog Elegan. All Rights Reserved.</p>
+    </footer>
+
+    <button id="scrollToTopBtn">↑ Scroll to Top</button>
+    <button id="addBlogButton">+</button>
+
+    <!-- Overlay untuk menutupi konten saat formulir terbuka -->
+    <div id="overlay"></div>
+
+    <!-- Formulir untuk menambah blog -->
+    <div id="addBlogForm">
+        <h3>Tambah Blog Baru</h3>
+        <input type="text" id="blogTitle" placeholder="Judul Blog">
+        <textarea id="blogContent" rows="4" placeholder="Isi Blog"></textarea>
+        <button onclick="addBlog()">Tambah Blog</button>
+        <button onclick="closeForm()">Tutup</button>
+    </div>
+
+    <script>
+        // Menambahkan efek scroll halus ketika mengklik link di menu
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Menambahkan tombol "Scroll to Top"
+        const scrollToTopButton = document.getElementById('scrollToTopBtn');
+        
+        // Menampilkan tombol "Scroll to Top" ketika pengguna menggulir ke bawah
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 200) {
+                scrollToTopButton.style.display = 'block'; // Tampilkan tombol
+            } else {
+                scrollToTopButton.style.display = 'none'; // Sembunyikan tombol
+            }
+        });
+
+        // Menggunakan tombol untuk menggulir ke atas
+        scrollToTopButton.addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Menampilkan formulir tambah blog
+        document.getElementById('addBlogButton').addEventListener('click', function() {
+            document.getElementById('addBlogForm').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        });
+
+        // Menutup formulir
+        function closeForm() {
+            document.getElementById('addBlogForm').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        // Menambahkan blog baru
+        function addBlog() {
+            const title = document.getElementById('blogTitle').value;
+            const content = document.getElementById('blogContent').value;
+
+            if (title && content) {
+                const newPost = document.createElement('section');
+                newPost.innerHTML = `<h2>${title}</h2><p>${content}</p>`;
+                document.querySelector('main').appendChild(newPost);
+                closeForm(); // Menutup formulir setelah menambahkan blog
+            } else {
+                alert("Skylarr's Blog");
+            }
+        }
+    </script>
+
+</body>
+</html>
